@@ -4,6 +4,7 @@ import datetime
 import gsearch
 import mywiki
 import myweather
+import my_dictionary
 from gtts import gTTS
 import os
 #app_id = "GWVLUE-J9A8GKRQGE"
@@ -39,9 +40,12 @@ localtime = time.asctime( time.localtime(time.time()) )
 
 now = datetime.datetime.now()
 hr=now.hour
-
-google = "google about "
-google1="google for "
+dic1="what is the meaning of "
+dic2="tell me the meaning of "
+dic3="meaning of "
+dic4="search the meaning of "
+google = "Google about "
+google1="Gogle for "
 google2="search "
 search = "search for "
 search1= "search about "
@@ -62,6 +66,7 @@ weather3= "weather forecast in "
 weather4= "weather forecast of "
 weather5="what is weather forecast in "
 weather6="what is weather forecast of "
+
 
 
 if hr < 12:
@@ -126,6 +131,15 @@ while 1:
         elif str == "great" or str == "nice" or str == "fine" or str == "good" or str == "ok" or str == "okay" or str == "alright" or str == "cool":
                 print("sir\n")
                 say("sir")
+        elif str== dic1+str[23:] or str==dic2+str[23:]:
+            my_dictionary.find(str[23:])
+
+        elif str== dic3+str[11:]:
+            my_dictionary.find(str[11:])
+
+        elif str== dic4+str[22:]:
+            my_dictionary.find(str[22:])
+
 
         elif str == google+str[13:] or str==search1+str[13:] :
             print("here we go")
